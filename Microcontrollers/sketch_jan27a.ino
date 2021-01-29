@@ -6,6 +6,7 @@
  * https://learn.adafruit.com/circuit-playground-music/using-the-circuit-playground-speaker
  * https://learn.adafruit.com/circuit-playground-bike-light/hello-neopixel
  * https://learn.adafruit.com/circuit-playground-music/the-sound-of-music
+ * https://cdn-learn.adafruit.com/downloads/pdf/circuit-playgrounds-motion-sensor.pdf
 */
 
 
