@@ -1,6 +1,4 @@
 
-
-
 /*
  * Resources:
  * https://learn.adafruit.com/circuit-playground-music/using-the-circuit-playground-speaker
@@ -8,7 +6,6 @@
  * https://learn.adafruit.com/circuit-playground-music/the-sound-of-music
  * https://cdn-learn.adafruit.com/downloads/pdf/circuit-playgrounds-motion-sensor.pdf
 */
-
 
 #include <Adafruit_CircuitPlayground.h>
 #include "notes.h"
@@ -25,7 +22,6 @@ void setup() {
   CircuitPlayground.begin();
   pinMode(speaker, OUTPUT);     
   pinMode(leftButton, INPUT);  
-
 }
 
 void loop() {
@@ -80,5 +76,4 @@ void loop() {
     CircuitPlayground.setPixelColor(8, 0x000000);
     CircuitPlayground.setPixelColor(9, 0x000000);                     
   }
-
 }
