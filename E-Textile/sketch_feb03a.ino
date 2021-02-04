@@ -1,10 +1,9 @@
 
-
-
 /*
  * Resources:
  * https://learn.adafruit.com/circuit-playground-music/using-the-circuit-playground-speaker
  * https://learn.adafruit.com/circuit-playground-music/the-sound-of-music
+ * https://musescore.com/discord5321/closer-the-chainsmokers-ft-halsey
 */
 
 
@@ -26,7 +25,6 @@ boolean capButton(uint8_t pad) {
     return false;
   }
 }
-
 
 const int speaker = 5;       
 const int leftButton = 4;   
@@ -52,7 +50,6 @@ void loop() {
         CircuitPlayground.setPixelColor(j, color);
        }
     }
-
   }
 
     if (capButton(6)) {
@@ -66,7 +63,6 @@ void loop() {
         {
           color = 0xbe0aff;
           Serial.print("C4 ");
-          
         }
         if( melody[i] == NOTE_G4)
         {
@@ -96,10 +92,8 @@ void loop() {
         for(int i = 0 ; i < 10; i++) {
           CircuitPlayground.setPixelColor(i, color);
         }
-          
         delay(110);
     }
-
   }
   
   if(digitalRead(leftButton)) {   
@@ -123,6 +117,7 @@ void loop() {
     delay(500);
     CircuitPlayground.setPixelColor(9, 0xff0000);  
   }
+  
   if(digitalRead(rightButton)) { 
     rightButtonCounter +=1;
     CircuitPlayground.setPixelColor(0, 0x000000);
