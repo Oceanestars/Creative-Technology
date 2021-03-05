@@ -1,5 +1,4 @@
-﻿
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -15,8 +14,8 @@ https://docs.unity3d.com/2018.2/Documentation/ScriptReference/UI.Text-text.html
 
 public class levelLoader : MonoBehaviour
 {
-    public int iLevelToLoad;
-    public string sLevelToLoad;
+    public int numLevelToLoad;
+    public string nameLevelToLoad;
     public Text myText;
     public string newText;
     public bool useIntegerToLoadLevel = false;
@@ -29,10 +28,7 @@ public class levelLoader : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    void Update()
-    {
-
-    }
+    void Update(){}
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -55,18 +51,17 @@ public class levelLoader : MonoBehaviour
         yield return new WaitForSeconds (1);
         LoadScene(); 
         transform.position = new Vector3(-6, 2, 0);
-   
     }
 
     void LoadScene()
     {
         if(useIntegerToLoadLevel)
         {
-            SceneManager.LoadScene(iLevelToLoad);
+            SceneManager.LoadScene(numLevelToLoad);
         }
         else 
         {
-            SceneManager.LoadScene(sLevelToLoad);
+            SceneManager.LoadScene(nameLevelToLoad);
         }
     }
 }
