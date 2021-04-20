@@ -1,0 +1,19 @@
+{
+  "name": "verus",
+  "version": "1.0.0",
+  "description": "# Deployment Link",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Oceane Andreis",
+  "license": "ISC",
+  "dependencies": {
+    "emailjs-com": "^2.6.4",
+    "express": "^4.17.1",
+    "knex": "^0.95.4",
+    "nodemon": "^2.0.7",
+    "orbitcss": "^1.1.1",
+    "sqlite3": "^5.0.2"
+  }
+}
