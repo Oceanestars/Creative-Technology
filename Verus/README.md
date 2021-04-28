@@ -10,6 +10,7 @@ This project is meant to be a gift. This gift is meant to be used as a self - de
 
 I first wanted to be able to take a picture of the physical card and then if you click on the QR code it leads you to a website where you can email your picture or have that physical card digitaly and then you can take a screenshot(Stretch goal is to be able to click a button and it saves to your computer) and attach that to an email and send it to someone. The great thing is to have the option to send the digital version or the physical version.
 I tried to use OrbitCSS but it ended up making things much more complicated to style my page.
+PHP took a while to learn and understand.
 
 # Deployment Link
 
@@ -23,8 +24,7 @@ In progress ...
 - AWS
 - SQLite3
 - EmailJS
-- Knex
-- NodeJS
+- PHP
 - Express
 
 # Resources
@@ -33,3 +33,8 @@ In progress ...
 - https://www.youtube.com/watch?v=x7Ewtay0Q78
 - https://codepen.io/matmarsiglio/pen/HLIor
 - https://stackoverflow.com/questions/7381150/how-to-send-an-email-from-javascript
+- https://www.freecodecamp.org/news/how-displaying-an-image-on-html5-canvas-works-13e3f6a6c4bd/
+- https://coursesweb.net/javascript/add-text-canvas-from-input-field-typed_cs
+- https://www.youtube.com/watch?v=DmkoQv0yGdw
+- https://www.youtube.com/watch?v=ZH-PnY-JGBU
+- https://www.w3schools.com/howto/howto_css_next_prev.asp

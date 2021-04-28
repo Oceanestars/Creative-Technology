@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gratitude Card</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-storage.js"></script>
+    <script src="firebaseStorage.js"></script>
+    <script>
+      window.addEventListener(
+        "load",
+        function () {
+          displayFile();
+        },
+        false
+      );
+    </script>
+  </head>
+  <body style="text-align: center">
+    <h1>My Gratitude card</h1>
+    <div id="displayCard"><img id="output" width="400" /></div>
+  </body>
+</html>

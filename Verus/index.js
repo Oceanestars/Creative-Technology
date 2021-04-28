@@ -1,3 +1,4 @@
+// Don't need this since I'm using firebase
 console.log("server is starting");
 var express = require('express');
 const http = require('http');

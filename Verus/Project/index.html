@@ -13,68 +13,107 @@
       type="text/javascript"
       src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"
     ></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-storage.js"></script>
+    <script src="firebaseStorage.js"></script>
+
     <script type="text/javascript">
       (function () {
         emailjs.init("user_IUi0oZpvCDBrDhqHXd6zl");
       })();
+      var pictures = [
+        "img/Mountain1.png",
+        "img/Mountain2.png",
+        "img/Mountain3.png",
+        "img/Mountain4.png",
+      ];
+      var canvasImage = "img/Mountain1.png";
+      var counter = 0;
+      function nextpic() {
+        if (counter < 3) {
+          counter++;
+          console.log(counter);
+          canvasImage = pictures[counter];
+        } else {
+          counter = 0;
+          console.log(counter);
+          canvasImage = pictures[counter];
+        }
+      }
+
+      function previouspic() {
+        if (counter <= 3) {
+          counter--;
+          console.log(counter);
+          canvasImage = pictures[counter];
+        }
+        if (counter < 0) {
+          counter = 3;
+          console.log(counter);
+          canvasImage = pictures[counter];
+        }
+      }
     </script>
     <title>Verus</title>
   </head>
   <body style="text-align: center">
-    <h1 style="margin-bottom: 100px">Verus</h1>
+    <h1 style="margin-bottom: 80px">Verus</h1>
+    <p>
+      1. If you want to create your card digitally please pick you background
+      and type in the text input. Then click download.
+    </p>
+    <canvas id="canvas" width="600px" height="428"></canvas><br />
+    <button
+      class="previous round"
+      style="font-size: large; margin-right: 300px"
+      onclick="previouspic()"
+    >
+      &#8249;
+    </button>
+    <button class="next round" style="font-size: large" onclick="nextpic()">
+      &#8250;
+    </button>
+    <br />
+    <br />
+    Type Text:
+    <input
+      type="text"
+      id="text_cnv"
+      size="40"
+      maxlength="280"
+      style="width: 502px"
+    />
+    <br />
+
+    <br />
+    <button onclick="downloadCanvas()">Download Me!</button><br /><br />
+    <input
+      type="file"
+      name="filename"
+      id="my_image"
+      style="width: 502px; border: none"
+    />
+    <button type="button" id="submit1" onclick="uploadFile()">
+      Save Image
+    </button>
+
+    <img id="output" width="200" />
     <br />
     <br />
     <br />
-    <section class="note">
-      <img
-        src="img/ajay-kumar-jana-UYOLg48y_Ns-unsplash.jpg"
-        alt="Beautiful mountains"
-        width="500px"
-        height="300px"
-        class="centered"
-        id="image"
-      />
-      <!-- <div id="whiteSquare" class="centered"> -->
-      <textarea
-        name="text"
-        rows="9"
-        placeholder="400 characters limit"
-        cols="9"
-        wrap="soft"
-        maxlength="400"
-        class="centered"
-      >
-      </textarea>
-      <!-- </div> -->
-    </section>
-    <br />
-    <br />
-    <br />
-    <br />
-    <form id="form" class="topBefore">
+    <div id="email" style="height: 600px; width: 300px; margin: auto">
       <input id="toName" type="text" placeholder="Enter to name" />
       <input id="fromName" type="text" placeholder="Enter from name" />
-      <input id="message" type="text" placeholder="Enter your short message" />
-      <input type="file" name="my_file" style="width: 502px; border: none" />
+      <input
+        id="message"
+        type="text"
+        placeholder="Enter your short message and the link"
+        style="height: 300px"
+      />
+
       <input id="submit" type="button" value="Submit!" onclick="sendMail()" />
-    </form>
-
-    <!-- <div class="container">
-
-      <input type="file" id="default-file" hidden="hidden" />
-
-
-      <button id="custom-btn" type="button" class="btn">CHOOSE FILE</button>
-
-      <span id="custom-space"> <strong> No</strong> File, Selected!?</span>
     </div>
-
-    <div class="preview_holder">
-      <div id="preview">
-        <img src="" id="preview_img" class="preview_img" />
-        <span id="preview_text" class="preview_text">Image Preview</span>
-      </div>
-    </div> -->
     <script src="project.js"></script>
   </body>
 </html>
