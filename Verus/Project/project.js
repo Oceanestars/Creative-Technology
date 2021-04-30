@@ -1,36 +1,3 @@
-// var pictures = ['img/Mountain1.png','img/Mountain2.png','img/Mountain3.png','img/Mountain4.png'];
-// var canvasImage = 'img/Mountain1.png';
-// var counter = 0;
-// function nextpic(){
-//   if(counter<3)
-//   {
-//     counter++;
-//     console.log(counter);
-//     canvasImage= pictures[counter];
-
-//   }
-//   else{
-//     counter = 0;
-//     console.log(counter);
-//     canvasImage= pictures[counter];
-
-//   }
-// }
-
-// function previouspic(){
-// 	if(counter<=3)
-// 	{
-//     counter--;
-//     console.log(counter);
-//     canvasImage = pictures[counter];
-// 	}
-// 	if(counter<0)
-// 	{
-// 		counter=3;
-// 		console.log(counter);
-// 		canvasImage = pictures[counter];
-// 	}
-// }
 
 function sendMail(params){
   var tempParams = {
@@ -46,8 +13,8 @@ function sendMail(params){
 const canvas = document.getElementById('canvas'); 
 const context = canvas.getContext('2d'); //canvas’s context is the pen  
 const img = new Image();   //canvas requires a preloaded image to draw and not just a URI to the image. 
-img.src = canvasImage;    
-console.log(canvasImage)  ;  
+img.src = 'img/Mountain1.png';    
+// console.log(canvasImage);  
 console.log("HELLO")
 img.onload = () => {context.drawImage(img, 0, 0);};
 var maxWidth = 360;

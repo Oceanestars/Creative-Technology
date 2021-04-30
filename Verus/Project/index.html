@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"
+    ></script>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,10 +13,13 @@
       href="https://cdn.jsdelivr.net/npm/orbitcss/css/orbit.min.css"
     />
     <link rel="stylesheet" href="style.css" />
-    <script
-      type="text/javascript"
-      src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"
-    ></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,100&display=swap"
+      rel="stylesheet"
+    />
+
     <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-storage.js"></script>
@@ -22,47 +29,36 @@
       (function () {
         emailjs.init("user_IUi0oZpvCDBrDhqHXd6zl");
       })();
-      var pictures = [
-        "img/Mountain1.png",
-        "img/Mountain2.png",
-        "img/Mountain3.png",
-        "img/Mountain4.png",
-      ];
-      var canvasImage = "img/Mountain1.png";
-      var counter = 0;
-      function nextpic() {
-        if (counter < 3) {
-          counter++;
-          console.log(counter);
-          canvasImage = pictures[counter];
-        } else {
-          counter = 0;
-          console.log(counter);
-          canvasImage = pictures[counter];
-        }
-      }
-
-      function previouspic() {
-        if (counter <= 3) {
-          counter--;
-          console.log(counter);
-          canvasImage = pictures[counter];
-        }
-        if (counter < 0) {
-          counter = 3;
-          console.log(counter);
-          canvasImage = pictures[counter];
-        }
-      }
     </script>
     <title>Verus</title>
   </head>
   <body style="text-align: center">
-    <h1 style="margin-bottom: 80px">Verus</h1>
-    <p>
-      1. If you want to create your card digitally please pick you background
-      and type in the text input. Then click download.
-    </p>
+    <!-- <h1 style="margin-bottom: 80px">Verus</h1> -->
+    <img src="img/verusLogo.png" alt="Verus Logo" style="margin: auto" />
+    <br />
+    <blockquote>
+      Verus means authentic in latin. Authenticity is pure and rare. There is
+      nothing more authentic than being yourself and reflecting on your journey.
+      Being grateful and writing down your thoughts are important. We want to
+      treasure those insightful and deep moments. Verus mixes the physical and
+      the digital. You can either write your thoughts on the physical card or on
+      the digital card. Then you can upload it to our database and send it to a
+      love one.
+    </blockquote>
+    <br />
+    <br />
+    <br />
+    <div id="stepOne">
+      <h3>1. Create your card</h3>
+      <p>
+        If you want to create your card digitally please pick you background and
+        type in the text input. <br />You cannot erase what you write just like
+        on a piece of paper. You can start over by refreshing the page. Then
+        click download.
+      </p>
+      <hr width="900" />
+      <br />
+    </div>
     <canvas id="canvas" width="600px" height="428"></canvas><br />
     <button
       class="previous round"
@@ -88,6 +84,13 @@
 
     <br />
     <button onclick="downloadCanvas()">Download Me!</button><br /><br />
+    <!-- Ideally get rid of this step -->
+    <div id="stepTwo">
+      <h3>2. Upload your card</h3>
+      <p>Save your image so you can share it with friends and family.</p>
+      <hr width="900" />
+      <br />
+    </div>
     <input
       type="file"
       name="filename"
@@ -97,13 +100,30 @@
     <button type="button" id="submit1" onclick="uploadFile()">
       Save Image
     </button>
-
+    <br />
+    <br />
+    <h5 id="linkToShare">Link to share:</h5>
+    <br />
+    <br />
+    <div id="stepThree">
+      <h3>3. Share your card</h3>
+      <p>
+        Enter the email of the person you want to share your card with. We will
+        take care of emailing it to them &#128512;
+      </p>
+      <hr width="900" />
+      <br />
+    </div>
     <img id="output" width="200" />
     <br />
+
     <br />
-    <br />
-    <div id="email" style="height: 600px; width: 300px; margin: auto">
-      <input id="toName" type="text" placeholder="Enter to name" />
+    <div id="email" style="height: 600px; width: 500px; margin: auto">
+      <input
+        id="toName"
+        type="text"
+        placeholder="Enter the email to send it to"
+      />
       <input id="fromName" type="text" placeholder="Enter from name" />
       <input
         id="message"
@@ -111,9 +131,61 @@
         placeholder="Enter your short message and the link"
         style="height: 300px"
       />
-
+      <br />
+      <br />
       <input id="submit" type="button" value="Submit!" onclick="sendMail()" />
     </div>
     <script src="project.js"></script>
+    <script>
+      // const canvas = document.getElementById("canvas");
+      // const context = canvas.getContext("2d");
+      var pictures = [
+        "img/Mountain1.png",
+        "img/Mountain2.png",
+        "img/Mountain3.png",
+        "img/Mountain4.png",
+      ];
+      //var canvasImage = "img/Mountain1.png";
+      var base_image = new Image();
+      var counter = 0;
+      function nextpic() {
+        if (counter < 3) {
+          counter++;
+          // base_image = new Image();
+          base_image.src = pictures[counter];
+          base_image.onload = function () {
+            context.drawImage(base_image, 0, 0);
+            console.log(counter);
+            // canvasImage = pictures[counter];
+          };
+        } else {
+          counter = 0;
+          console.log(counter);
+          base_image.src = pictures[counter];
+          base_image.onload = function () {
+            context.drawImage(base_image, 0, 0);
+          };
+        }
+      }
+
+      function previouspic() {
+        if (counter <= 3) {
+          counter--;
+          console.log(counter);
+          base_image.src = pictures[counter];
+          base_image.onload = function () {
+            context.drawImage(base_image, 0, 0);
+          };
+        }
+        if (counter < 0) {
+          counter = 3;
+          console.log(counter);
+          base_image.src = pictures[counter];
+          base_image.onload = function () {
+            context.drawImage(base_image, 0, 0);
+          };
+        }
+      }
+    </script>
   </body>
 </html>

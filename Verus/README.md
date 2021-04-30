@@ -38,3 +38,4 @@ In progress ...
 - https://www.youtube.com/watch?v=DmkoQv0yGdw
 - https://www.youtube.com/watch?v=ZH-PnY-JGBU
 - https://www.w3schools.com/howto/howto_css_next_prev.asp
+- https://css-tricks.com/snippets/css/simple-and-nice-blockquote-styling/

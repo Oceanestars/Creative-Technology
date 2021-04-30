@@ -21,9 +21,9 @@ firebase.initializeApp({
 
 
 function uploadFile(){
-
+  var linkShare = document.getElementById("linkToShare");
   let input2 = document.querySelector("#my_image").files[0]
-  console.log(input2.name);
+  // console.log(input2.name);
   const storage = firebase.storage().ref('images/'+ input2.name);
   const task = storage.put(input2);
   task.on('state_change',
@@ -40,6 +40,8 @@ function uploadFile(){
     })
   }
   )
+  linkShare.style.display="inline";
+  linkShare.innerHTML+="<a style='font-size:14px'href='verus-2986e.web.app/display.html'> verus-2986e.web.app/displayFile.html</a>"
 
 }
 
