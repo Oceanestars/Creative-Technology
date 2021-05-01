@@ -1,5 +1,6 @@
 
 function sendMail(params){
+  var notyf = new Notyf();
   var tempParams = {
     from_name: document.getElementById("fromName").value,
     to_name: document.getElementById("toName").value,
@@ -9,6 +10,8 @@ function sendMail(params){
   .then(function(res){
     console.log("success", res.status);
   })
+  const notification = notyf.success('Emailed successfully');
+  // setTimeout(function(){notyf.dismissAll();}, 2000);
 }
 const canvas = document.getElementById('canvas'); 
 const context = canvas.getContext('2d'); //canvas’s context is the pen  

@@ -21,10 +21,11 @@ firebase.initializeApp({
 
 
 function uploadFile(){
+  var notyf = new Notyf();
   var linkShare = document.getElementById("linkToShare");
   let input2 = document.querySelector("#my_image").files[0]
   // console.log(input2.name);
-  const storage = firebase.storage().ref('images/'+ input2.name);
+  const storage = firebase.storage().ref('images/'+ cDate2+'-image.png');
   const task = storage.put(input2);
   task.on('state_change',
   function progress(snap){
@@ -36,19 +37,23 @@ function uploadFile(){
   function completed(){
     storage.getDownloadURL().then(url=>{
       let body = document.querySelector('body')
-      body.innerHTML += `<img src=${url} alt="">`;
+      // body.innerHTML += `<img src=${url} alt="">`;
     })
   }
   )
   linkShare.style.display="inline";
-  linkShare.innerHTML+="<a style='font-size:14px'href='verus-2986e.web.app/display.html'> verus-2986e.web.app/displayFile.html</a>"
+  linkShare.innerHTML+="<a style='font-size:14px'href='verus-2986e.web.app/display.html'> verus-2986e.web.app/display.html</a>";
+
+  //console.log(notification);
+  const notification = notyf.success('Uploaded successfully');
+// setTimeout(function(){ console.log("hello") }, 2000);
 
 }
 
 function displayFile(){
   var image = document.getElementById('output');
   var storageRef = firebase.storage().ref();
-  var forestRef = storageRef.child('images/'+cDate2+'-image.png');
+  var forestRef = storageRef.child('images/'+cDate2+'-image.png'); //grab most recent one
   forestRef.getDownloadURL().then(url => {
     image.src = url;
 });

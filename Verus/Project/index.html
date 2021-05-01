@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
     <script
       type="text/javascript"
       src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"
@@ -19,10 +20,15 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,100&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css"
+    />
 
     <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-storage.js"></script>
+
     <script src="firebaseStorage.js"></script>
 
     <script type="text/javascript">
@@ -43,7 +49,7 @@
       treasure those insightful and deep moments. Verus mixes the physical and
       the digital. You can either write your thoughts on the physical card or on
       the digital card. Then you can upload it to our database and send it to a
-      love one.
+      loved one!
     </blockquote>
     <br />
     <br />
@@ -52,9 +58,10 @@
       <h3>1. Create your card</h3>
       <p>
         If you want to create your card digitally please pick you background and
-        type in the text input. <br />You cannot erase what you write just like
-        on a piece of paper. You can start over by refreshing the page. Then
-        click download.
+        type in the text input. <br />You won't be able to erase what you wrote
+        like you would on a regular piece of paper. <br />Instead you'll need to
+        refresh the page and start over your card. Then hit download to complete
+        it!
       </p>
       <hr width="900" />
       <br />
@@ -87,7 +94,10 @@
     <!-- Ideally get rid of this step -->
     <div id="stepTwo">
       <h3>2. Upload your card</h3>
-      <p>Save your image so you can share it with friends and family.</p>
+      <p>
+        Upload your image to the cloud and click save image so you can share it
+        with friends and family.
+      </p>
       <hr width="900" />
       <br />
     </div>
@@ -108,7 +118,9 @@
     <div id="stepThree">
       <h3>3. Share your card</h3>
       <p>
-        Enter the email of the person you want to share your card with. We will
+        Enter the email of the person you want to share your card with. Enter
+        your name. <br />
+        Add a short message and copy and paste the link generated above. We will
         take care of emailing it to them &#128512;
       </p>
       <hr width="900" />
