@@ -4,6 +4,7 @@ function sendMail(params){
   var tempParams = {
     from_name: document.getElementById("fromName").value,
     to_name: document.getElementById("toName").value,
+    to_email: document.getElementById("toEmail").value,
     message: document.getElementById("message").value,
   };
   emailjs.send('service_jsw4osu','template_now7f2d',tempParams)
