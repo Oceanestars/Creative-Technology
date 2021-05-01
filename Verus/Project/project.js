@@ -8,17 +8,16 @@ function sendMail(params){
   };
   emailjs.send('service_jsw4osu','template_now7f2d',tempParams)
   .then(function(res){
+    const notification = notyf.success('Emailed successfully');
     console.log("success", res.status);
+    setTimeout(function(){location.reload();
+      return false;},2000);
   })
-  const notification = notyf.success('Emailed successfully');
-  // setTimeout(function(){notyf.dismissAll();}, 2000);
 }
 const canvas = document.getElementById('canvas'); 
 const context = canvas.getContext('2d'); //canvas’s context is the pen  
 const img = new Image();   //canvas requires a preloaded image to draw and not just a URI to the image. 
-img.src = 'img/Mountain1.png';    
-// console.log(canvasImage);  
-console.log("HELLO")
+img.src = 'img/Mountain1.png';     
 img.onload = () => {context.drawImage(img, 0, 0);};
 var maxWidth = 360;
 console.log("maxWidth="+maxWidth);

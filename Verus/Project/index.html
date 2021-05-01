@@ -149,26 +149,21 @@
     </div>
     <script src="project.js"></script>
     <script>
-      // const canvas = document.getElementById("canvas");
-      // const context = canvas.getContext("2d");
       var pictures = [
         "img/Mountain1.png",
         "img/Mountain2.png",
         "img/Mountain3.png",
         "img/Mountain4.png",
       ];
-      //var canvasImage = "img/Mountain1.png";
+
       var base_image = new Image();
       var counter = 0;
       function nextpic() {
         if (counter < 3) {
           counter++;
-          // base_image = new Image();
           base_image.src = pictures[counter];
           base_image.onload = function () {
             context.drawImage(base_image, 0, 0);
-            console.log(counter);
-            // canvasImage = pictures[counter];
           };
         } else {
           counter = 0;

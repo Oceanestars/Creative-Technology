@@ -37,16 +37,13 @@ function uploadFile(){
   function completed(){
     storage.getDownloadURL().then(url=>{
       let body = document.querySelector('body')
-      // body.innerHTML += `<img src=${url} alt="">`;
+
     })
   }
   )
   linkShare.style.display="inline";
   linkShare.innerHTML+="<a style='font-size:14px'href='verus-2986e.web.app/display.html'> verus-2986e.web.app/display.html</a>";
-
-  //console.log(notification);
   const notification = notyf.success('Uploaded successfully');
-// setTimeout(function(){ console.log("hello") }, 2000);
 
 }
 
