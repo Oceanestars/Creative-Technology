@@ -21,7 +21,6 @@ PHP took a while to learn and understand. SO I decided to go a different route. 
 - HTML
 - CSS
 - JS
-- AWS
 - Notyf
 - EmailJS
 - Firebase Hosting & Storage
